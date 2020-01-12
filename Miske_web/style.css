@@ -374,13 +374,14 @@ nav {
   margin-left: -5vw;
 }
 
-.artists>:nth-child(5) {
+/* for another aritst */
+/* .artists>:nth-child(5) {
   padding-left: 0;
 }
 
 .artists>:nth-child(5) .person {
   margin-left: 15vw;
-}
+} */
 
 .artists .qoute {
   align-self: center;
