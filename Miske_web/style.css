@@ -1,0 +1,548 @@
+/* font */
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Martel:300&display=swap');
+
+/* custom variables */
+:root {
+  /* colors */
+  --bg-color-white: rgb(250, 250, 250);
+  --bg-color-white-txtbox: rgb(250, 250, 250, 1);
+  --bg-color-green: #00603F;
+  --color-black: rgba(5, 5, 5);
+  --color-white: rgba(250, 250, 250);
+
+  /* font */
+  /* title */
+  --font-size-h1: 215px;
+  /* qoutes */
+  --font-size-h2: 46px;
+  /* names */
+  --font-size-h3: 46px;
+  /* subnames */
+  --font-size-h4: 22px;
+  /* paragraph */
+  --font-size-h5: 16px;
+  /* menu */
+  --font-size-h6: 22px;
+  --line-height-paragraph: 2;
+  --line-height-qoute: 1.6;
+  --font-wght-sans-serif-1: 200;
+  --font-wght-sans-serif-2: 300;
+  --font-wght-serif: 300;
+
+  /* var */
+  --menu-padd: 25px;
+  --social-padd: 10vw;
+  --text-padd: 35px;
+  --text-paragraph-padd: 4em;
+  --about-person-padd: 1em;
+}
+
+* {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  background-color: var(--bg-color-green);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+#footer {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* TABLE OF CONTENTS */
+/* ———————————————————————————————————— */
+/* 
+  a. NAVIGATION
+  b. GLOBAL
+  1. ABOUT
+  2. TEAM
+  3. ARTISTS
+  4. DONATE
+  5. GET INVOLVED
+  6. CONTACT
+  7. SKETCH
+  8. SOCIAL
+  9. LOGO
+ */
+/* ———————————————————————————————————— */
+
+/* a. NAVIGATION */
+/* ———————————————————————————————————— */
+/* navigation */
+nav {
+  position: fixed;
+  z-index: 100;
+}
+
+.nav ul {
+  width: 100vw;
+  /* position: fixed; */
+  display: flex;
+  list-style-type: none;
+  flex-direction: row;
+  justify-content: space-around;
+
+  background-color: var(--bg-color-green);
+  font: var(--font-wght-sans-serif-2) var(--font-size-h6) 'Raleway', sans-serif;
+  text-transform: uppercase;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.nav a {
+  display: block;
+  text-align: center;
+  padding: var(--menu-padd);
+}
+
+.target {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  border-bottom: 4px solid var(--color-white);
+  top: -4px;
+  transform: translateX(-60px);
+  color: red;
+}
+
+.nav a,
+.target {
+  transition: all .35s ease-in-out;
+}
+
+
+/* title */
+.title {
+  font: var(--font-wght-sans-serif-1) var(--font-size-h1) 'Raleway', sans-serif;
+  padding-top: calc(var(--menu-padd) * 2 + var(--font-size-h6));
+
+  position: fixed;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+  background: transparent;
+  /* left: 10vw; */
+
+  line-height: 1;
+  color: var(--color-black);
+}
+
+.title * {
+  position: fixed;
+}
+
+/* b. GLOBAL */
+/* ———————————————————————————————————— */
+.txt-box {
+  background: var(--bg-color-white-txtbox);
+  display: inline;
+}
+
+/* photo */
+.photo * {
+  width: 30vw;
+  height: auto;
+}
+
+/* text */
+.qoute {
+  font: var(--font-wght-serif) var(--font-size-h2) 'Martel', serif;
+  line-height: var(--line-height-qoute);
+  text-align: center;
+  align-content: center;
+  width: 80vw;
+  padding: var(--text-paragraph-padd) 0;
+}
+
+.paragraph {
+  font: var(--font-wght-sans-serif-2) var(--font-size-h5) 'Raleway', sans-serif;
+  line-height: var(--line-height-paragraph);
+  padding-bottom: var(--text-paragraph-padd);
+}
+
+.name {
+  font: var(--font-wght-serif) var(--font-size-h3) 'Martel', serif;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.position {
+  font: var(--font-wght-serif) var(--font-size-h4) 'Martel', serif;
+  white-space: nowrap;
+  padding-bottom: var(--about-person-padd);
+}
+
+.person {
+  width: 20vw;
+}
+
+.person>div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sub-txt {
+  font: 300 var(--font-size-h4) 'Martel', serif;
+  width: 80vw;
+  text-align: center;
+  margin-top: -6em;
+  padding-bottom: var(--text-paragraph-padd);
+}
+
+.txt-align-right>* {
+  text-align: right;
+  float: right;
+  position: relative;
+  direction: rtl;
+}
+
+/* padding */
+#artists,
+#get-involved {
+  padding-bottom: 8vh;
+}
+
+#contact {
+  padding-bottom: 4vh;
+}
+
+/* 1. ABOUT */
+/* ———————————————————————————————————— */
+.about {
+  background-color: var(--bg-color-white);
+  display: flex;
+  flex-direction: row;
+}
+
+.about .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.about .photo * {
+  width: 70vw;
+}
+
+.about .paragraph {
+  padding-top: calc(var(--menu-padd) * 2 + var(--font-size-h6));
+  width: 35vw;
+  margin-left: -15vw;
+  padding-right: var(--social-padd);
+
+  color: var(--color-black);
+}
+
+.about .qoute {
+  width: 55vw;
+  color: var(--color-black);
+}
+
+/* 2. TEAM */
+/* ———————————————————————————————————— */
+.team {
+  background-color: var(--bg-color-green);
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.team .person {
+  color: var(--color-white);
+}
+
+/* individual photo */
+
+.team .liu .person,
+.team .augustinas .person,
+.team .argiris .person,
+.team .al .person {
+  margin-top: calc(-1.25 * var(--text-padd));
+}
+
+.team .ula .person,
+.team .ellie .person {
+  margin-bottom: calc(-2.25 * var(--text-padd));
+  position: relative;
+  float: left;
+}
+
+.team .liu,
+.team .ellie,
+.team .argiris,
+.team .al {
+  align-self: flex-end;
+  padding-right: var(--social-padd);
+}
+
+.team .liu .person {
+  margin-left: -5vw;
+}
+
+.team .ula {
+  align-self: flex-start;
+  padding-left: 10vw;
+}
+
+.team .ula .person {
+  margin-left: 25vw;
+}
+
+.team .argiris .person {
+  margin-left: -10vw;
+}
+
+.team .ellie .person {
+  margin-left: -15vw;
+  padding-top: var(--text-paragraph-padd)
+}
+
+.team .ellie .paragraph,
+.team .ula .paragraph {
+  padding-bottom: 0;
+}
+
+.team .ellie .name,
+.team .ula .name {
+  padding-top: var(--about-person-padd);
+}
+
+.team .augustinas {
+  align-self: flex-start;
+}
+
+.team .augustinas .person {
+  margin-left: 15vw;
+}
+
+.team .al {
+  padding-right: 20vw;
+}
+
+.team .al .person {
+  margin-left: 10vw;
+}
+
+/* 3. ARTISTS */
+/* ———————————————————————————————————— */
+.artists {
+  background-color: var(--bg-color-white);
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.artists .person {
+  color: var(--color-black);
+  margin-top: calc(-1.25 * var(--text-padd));
+}
+
+.artists .person>div>span {
+  background: var(--bg-color-white-txtbox);
+  display: inline;
+}
+
+/* individual photo */
+.artists>:nth-child(even) {
+  padding-right: var(--social-padd);
+  align-self: flex-end;
+}
+
+.artists>:nth-child(odd) {
+  padding-left: 5vw;
+  align-self: flex-start;
+}
+
+.artists>:nth-child(2) .person {
+  margin-left: -5vw;
+}
+
+.artists>:nth-child(5) {
+  padding-left: 0;
+}
+
+.artists>:nth-child(5) .person {
+  margin-left: 15vw;
+}
+
+.artists .qoute {
+  align-self: center;
+}
+
+/* 4. DONATIONS */
+/* ———————————————————————————————————— */
+.donations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--bg-color-green);
+  color: var(--color-white);
+}
+
+/* button */
+.donations .button button {
+  width: 35vw;
+  height: 6vw;
+  background-color: var(--bg-color-green);
+  color: var(--color-white);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  cursor: pointer;
+
+  font: var(--font-wght-sans-serif-2) var(--font-size-h6) 'Raleway', sans-serif;
+
+  transition: .3s ease-in-out;
+}
+
+.donations .button button:focus {
+  outline: none;
+}
+
+.donations .button button:hover {
+  background-color: var(--bg-color-white);
+  color: var(--color-black);
+  letter-spacing: 0.35em;
+}
+
+.donations .fake-parallax {
+  cursor: default;
+}
+
+/* 5. GET INVOLVED */
+/* ———————————————————————————————————— */
+.get-involved {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--bg-color-white);
+  color: var(--color-black);
+}
+
+.get-involved-unit .sub-txt a {
+  color: var(--color-black);
+}
+
+/* 6. CONTACT */
+/* ———————————————————————————————————— */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--bg-color-green);
+  color: var(--color-white);
+}
+
+.contact .sub-txt a {
+  color: var(--color-white);
+}
+
+/* 7. SKETCH */
+/* ———————————————————————————————————— */
+#header {
+  height: 100vh;
+}
+
+#before {
+  height: 0vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  transition: 1s;
+  overflow: hidden;
+}
+
+#sketch {
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+  cursor: url(./assets/cursor_custom.png), auto;
+}
+
+.fake-parallax {
+  height: 35vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.6s;
+  cursor: url(./assets/cursor_custom.png), auto;
+}
+
+.fake-parallax-image {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  background-image: url(./assets/cover_6.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* 8. SOCIAL */
+/* ———————————————————————————————————— */
+.social {
+  width: 10vw;
+  height: auto;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  top: calc(50% - 10vh);
+}
+
+.social>div {
+  width: 5vw;
+  height: 5vw;
+  margin: 5vh 0;
+  cursor: pointer;
+
+  fill: var(--color-black);
+  opacity: 0.1;
+  transition: 0.35s ease-in-out;
+}
+
+.social>div:hover {
+  opacity: 1;
+}
+
+/* 9. LOGO */
+/* ———————————————————————————————————— */
+#logo {
+  width: 40vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}

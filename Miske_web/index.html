@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Miske_web</title>
+
+	<!-- css -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- js -->
+	<script src="libraries/p5.js"></script>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		canvas {
+			margin: auto;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- NAVIGATION -->
+	<nav class="nav">
+		<ul>
+			<li>
+				<a onclick="scrollMenu('about')">about</a>
+			</li>
+			<li>
+				<a onclick="scrollMenu('team')">team</a>
+			</li>
+			<li>
+				<a onclick="scrollMenu('artists')">artists</a>
+			</li>
+			<li>
+				<a onclick="scrollMenu('donations')">donate</a>
+			</li>
+			<li>
+				<a onclick="scrollMenu('get-involved')">get involved</a>
+			</li>
+			<li>
+				<a onclick="scrollMenu('contact')">contact</a>
+			</li>
+		</ul>
+	</nav>
+	<span class="target"></span>
+	<!-- TITLE -->
+	<div class="title">
+		<div class="moving-title about-title">ABOUT</div>
+		<div class="moving-title about-team">TEAM</div>
+		<div class="moving-title about-artists">ARTISTS</div>
+		<div class="moving-title about-donate">DONATE</div>
+		<div class="moving-title about-get-involved">GET INVOLVED</div>
+		<div class="moving-title about-contact">CONTACT</div>
+	</div>
+	<!-- SOCIAL -->
+	<div class="social">
+		<div class="twitter" onclick="socialMedia(this)">
+			<svg viewBox="0 0 100 100">
+				<path d="M50.7,0.7L44,7.4L7.3,44.1l-6.7,6.7l6.7,6.7v0L44,94.1h0l6.7,6.7l6.7-6.7h0L94,57.4l6.7-6.7L50.7,0.7z
+	 M69.3,41.2c0.6,13.5-9.4,28.5-27.3,28.5c-5.4,0-10.4-1.6-14.7-4.3c5.1,0.6,10.2-0.8,14.2-4c-4.2-0.1-7.7-2.8-9-6.6
+	c1.5,0.3,3,0.2,4.3-0.2c-4.6-0.9-7.8-5.1-7.7-9.5c1.3,0.7,2.8,1.2,4.4,1.2c-4.3-2.9-5.5-8.5-3-12.8c4.7,5.8,11.8,9.6,19.7,10
+	c-1.4-6,3.2-11.8,9.4-11.8c2.7,0,5.2,1.2,7,3c2.2-0.4,4.2-1.2,6.1-2.3c-0.7,2.2-2.2,4.1-4.2,5.3c1.9-0.2,3.8-0.7,5.5-1.5
+	C72.8,38.1,71.1,39.8,69.3,41.2z" />
+			</svg>
+		</div>
+		<div class="facebook" onclick="socialMedia(this)">
+			<svg viewBox="0 0 100 100">
+				<path d="M93.3,43.3L56.7,6.7L50,0L0,50l6.7,6.7v0l36.7,36.7h0L50,100l6.7-6.7h0l36.7-36.7L100,50L93.3,43.3z M62.2,32.8
+	c0,0-4.1,0-5.8,0c-2.1,0-2.5,0.8-2.5,2.9c0,1.8,0,5.1,0,5.1h8.2l-0.8,8.9H54v26.7H43.3V49.9h-5.6v-9.1h5.6c0,0,0-1.3,0-7.1
+	c0-6.7,3.6-10.2,11.5-10.2c1.3,0,7.4,0,7.4,0V32.8z" />
+			</svg>
+		</div>
+		<div class="insta" onclick="socialMedia(this)">
+			<svg viewBox="0 0 100 100">
+				<path
+					d="M93.3,43.3L56.7,6.7L50,0L0,50l6.7,6.7v0l36.7,36.7h0L50,100l6.7-6.7h0l36.7-36.7v0L100,50L93.3,43.3z
+			M73.9,59.9c-0.1,2.6-0.5,4.3-1.1,5.9c-0.6,1.6-1.5,2.9-2.8,4.3c-1.3,1.3-2.7,2.1-4.3,2.8c-1.5,0.6-3.3,1-5.8,1.1
+		 c-2.6,0.1-3.4,0.2-9.9,0.2c-6.5,0-7.4,0-9.9-0.2c-2.6-0.1-4.3-0.5-5.9-1.1c-1.6-0.6-2.9-1.4-4.2-2.8c-1.3-1.3-2.2-2.7-2.8-4.3
+		 c-0.6-1.5-1-3.3-1.1-5.9c-0.1-2.6-0.2-3.4-0.2-9.9c0-6.5,0-7.4,0.2-9.9s0.5-4.3,1.1-5.8c0.6-1.6,1.5-2.9,2.8-4.3
+		 c1.3-1.3,2.7-2.2,4.2-2.8c1.5-0.6,3.3-1,5.9-1.1C42.6,26,43.5,26,50,26c6.5,0,7.4,0,9.9,0.1c2.6,0.1,4.3,0.5,5.8,1.1
+		 c1.6,0.6,2.9,1.4,4.3,2.8c1.3,1.3,2.2,2.7,2.8,4.3c0.6,1.5,1,3.3,1.1,5.8C74,42.7,74,43.5,74,50C74,56.5,74,57.4,73.9,59.9z" />
+				<path d="M50,42c-4.4,0-8,3.6-8,8c0,4.4,3.6,8,8,8c4.4,0,8-3.6,8-8C58,45.6,54.4,42,50,42z" />
+				<path d="M68.7,35.8c-0.4-1.1-0.9-1.9-1.8-2.8c-0.8-0.9-1.6-1.4-2.8-1.8c-0.8-0.3-2.1-0.7-4.4-0.8
+		 c-2.5-0.1-3.3-0.1-9.7-0.1c-6.4,0-7.2,0-9.7,0.1c-2.3,0.1-3.6,0.5-4.4,0.8c-1.1,0.4-1.9,0.9-2.8,1.8c-0.9,0.8-1.4,1.6-1.8,2.8
+		 c-0.3,0.9-0.7,2.1-0.8,4.5c-0.1,2.5-0.2,3.3-0.2,9.7c0,6.4,0,7.2,0.2,9.7c0.1,2.4,0.5,3.6,0.8,4.5c0.4,1.1,1,1.9,1.8,2.8
+		 c0.8,0.8,1.6,1.4,2.8,1.8c0.8,0.3,2.1,0.7,4.4,0.8c2.5,0.1,3.3,0.1,9.7,0.1c6.4,0,7.2,0,9.7-0.1c2.3-0.1,3.6-0.5,4.4-0.8
+		 c1.1-0.4,1.9-1,2.8-1.8c0.9-0.9,1.4-1.7,1.8-2.8c0.3-0.9,0.7-2.1,0.8-4.5c0.1-2.5,0.1-3.3,0.1-9.7c0-6.4,0-7.2-0.1-9.7
+		 C69.5,37.9,69.1,36.7,68.7,35.8z M50,62.4c-6.8,0-12.4-5.5-12.4-12.3S43.2,37.6,50,37.6c6.8,0,12.4,5.5,12.4,12.4
+		 S56.8,62.4,50,62.4z M62.8,40c-1.6,0-2.9-1.3-2.9-2.9s1.3-2.9,2.9-2.9c1.6,0,2.9,1.3,2.9,2.9S64.4,40,62.8,40z" />
+				</g>
+			</svg>
+		</div>
+	</div>
+	<!-- SKETCH -->
+	<div id="before" onclick="expandGraphics(this)">
+		<div id="sketch"></div>
+	</div>
+	<!-- logo -->
+
+	<!-- fake parallax -->
+	<div id="header" class="fake-parallax" onclick="expandGraphics(this)">
+		<div id="logo" class="ignore-height">
+			<img src="assets/miske_logo.svg" alt="miske-logo">
+		</div>
+		<div class="fake-parallax-image"></div>
+	</div>
+	<!-- —————— -->
+	<!-- CONTENT -->
+	<!-- —————— -->
+	<div id="content" class="content">
+		<!-- ABOUT -->
+		<div id="about" class="container about">
+			<div class="left">
+				<div class="photo">
+					<img src="assets/photo_about.jpg" alt="">
+				</div>
+				<div class="qoute">
+					From urban jungle<br> to living forest
+				</div>
+			</div>
+			<div class="right">
+				<div class="paragraph">
+					<p class="txt-box">
+						Open Forest will transform Liverpool Street Station, a symbol of London’s industrialisation, into a symbol
+						of a bright and beautiful future. Imagine you look up on your daily commute to see a roof full of greenery,
+						you look a little closer and see installation art from some of London’s most thought-provoking artists,
+						suddenly everything is different.
+						<br>
+						<br>
+						<i>We are uniting for something bigger than our differences</i>
+						<br>
+						<br>
+						MISKE believes nature is the key to life, in this non-stop urban jungle it is more important than ever to
+						not lose touch of the earth we came from, and to which we will all eventually return.
+						<br>
+						<br>
+						MISKE believes that nature has the power to unite people, to bring a community together, to inspire us to
+						make positive green change, permanently.
+						<br>
+						<br>
+						MISKE believes art cannot exist behind walls, it is all around us, in everything we touch. Art can inspire,
+						and more importantly challenge us to pause and reflect.
+						<br>
+						<br>
+						MISKE believes that the key to London’s green and beautiful future is through community driven sustainable
+						change. United we can create a London we can all be proud of.
+						<br>
+						<br>
+						<i>London’s beating heart is the people within it.</i>
+						<br>
+						<br>
+						<i>We bring nature and art back to people and their daily lifes.</i>
+						<br>
+						<br>
+						Open Forest will then be replanted to create a community garden for a local borough designed by and for the
+						people. The memories of the installation preserved forever to be enjoyed by you, the people of London.
+					</p>
+				</div>
+			</div>
+			<!-- fake parallax -->
+			<div class="fake-parallax" onclick="expandGraphics(this)">
+				<div class="fake-parallax-image"></div>
+			</div>
+		</div>
+
+		<!-- TEAM -->
+		<div id="team" class="container team">
+			<div class="liu">
+				<div class="photo">
+					<img src="assets/photo_liu.jpg" alt="">
+				</div>
+				<div class="person txt-align-right">
+					<div class="name">Liu Mackialo</div>
+					<div class="position">Author and project manager</div>
+					<div class="paragraph">
+						MISKE is that place that brings out the human in you, the soul in you, the love in you
+					</div>
+				</div>
+			</div>
+			<div class="ula">
+				<div class="person">
+					<div class="paragraph">
+						MISKE is where I go to reconnect with my inner self, to hear my thoughts and understand everything better,
+						to feel truly and deeply alive
+					</div>
+					<div class="name">Ula Maria</div>
+					<div class="position">Landscape designer</div>
+				</div>
+				<div class="photo">
+					<img src="assets/photo_ula.jpg" alt="ula photo">
+				</div>
+			</div>
+			<div class="argiris">
+				<div class="photo">
+					<img src="assets/photo_algiris.jpg" alt="augustinas photo">
+				</div>
+				<div class="person txt-align-right">
+					<div class="name">Argiris Sarris</div>
+					<div class="position">Creative director</div>
+					<div class="paragraph">
+						MISKE for me is like reconnecting with a first love, an affair between humans and nature
+					</div>
+				</div>
+			</div>
+			<!-- fake parallax -->
+			<div class="fake-parallax" onclick="expandGraphics(this)">
+				<div class="fake-parallax-image"></div>
+			</div>
+
+			<div class="ellie">
+				<div class="person txt-align-right">
+					<div class="paragraph">
+						Miske for me is letting yourself be inspired to be a part of something bigger, to be a part of the solution
+					</div>
+					<div class="name">Ellie Boyce</div>
+					<div class="position">Communication manager</div>
+				</div>
+				<div class="photo">
+					<img src="assets/photo_ellie.jpg" alt="Ellie photo">
+				</div>
+			</div>
+			<div class="augustinas">
+				<div class="photo">
+					<img src="assets/photo_augustinas.jpg" alt="augustinas photo">
+				</div>
+				<div class="person">
+					<div class="name">Augustinas Minkauskas</div>
+					<div class="position">Architect</div>
+					<div class="paragraph">
+						MISKE is attempt to capture that fascinating forest magic and bring it closer to our mundane day-to-day
+						life
+					</div>
+				</div>
+			</div>
+			<div class="al">
+				<div class="photo">
+					<img src="assets/photo_al.jpg" alt="augustinas photo">
+				</div>
+				<div class="person txt-align-right">
+					<div class="name">Al Shaibani</div>
+					<div class="position">Community impact manager</div>
+					<div class="paragraph">
+						Miske means anything is possible in London
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ARTISTS -->
+		<div id="artists" class="container artists">
+			<div class="qoute">
+				The art featured in MISKE will speak of our connection to the earth, and our tiny place in it.
+			</div>
+			<div>
+				<div class="photo">
+					<img src="assets/photo_holland.jpg" alt="photo-rob-holland">
+				</div>
+				<div class="person txt-align-right">
+					<div class="name"><span>Rob Holland</span></div>
+					<div class="position"><span>Sculptor</span></div>
+					<div class="paragraph">
+						<span>A sculptor and environmental artist, Rob’s works at MISKE will explore the complex relationship
+							between humans and the natural world. The reflection of mirrored sculptures are inviting the viewer to
+							question their individual relationship with their surroundings</span>
+					</div>
+				</div>
+			</div>
+			<!-- fake parallax -->
+			<div class="fake-parallax" onclick="expandGraphics(this)">
+				<div class="fake-parallax-image"></div>
+			</div>
+			<!-- fake div -->
+			<div></div>
+			<div>
+				<div class="photo">
+					<img src="assets/photo_sabaliauskas.jpg" alt="photo-eugenijus-sabaliauskas">
+				</div>
+				<div class="person">
+					<div class="name"><span>Eugenijus Sabaliauskas</span></div>
+					<div class="position"><span>Light artist</span></div>
+					<div class="paragraph">
+						<span>Lithuanian based Eugenijus Sabaliauskas will be lighting Open Forest to reflect the passing of the sun
+							outside. The forest will go through dawn and dusk, creating a magical landscape unique to every hour. The
+							inspiration for the lighting has come from the natural light in nature, making the forest as true to life
+							as possible</span>
+					</div>
+				</div>
+			</div>
+			<!-- qoute -->
+			<div class="get-involved-unit">
+				<div class="qoute">
+					Do you make beautiful, thought provoking art that unites the viewer with the natural world?
+				</div>
+				<div class="sub-txt">
+					If so, we’d love to collaborate with you - contact us here <a
+						href="mailto:info@miske.co.uk">info@miske.co.uk</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- DONATIONS -->
+		<div id="donations" class="container donations">
+			<div class="qoute">
+				MISKE cannot exist without your help. Help transform your local station into a green wonderland, and leave a
+				lasting green footprint on our city
+			</div>
+			<!-- fake parallax -->
+			<div class="fake-parallax">
+				<div class="button">
+					<button type="button" onClick="window.open('https://www.spacehive.com/');">DONATE</button>
+				</div>
+				<div class="fake-parallax-image"></div>
+			</div>
+		</div>
+
+		<!-- GET INVOLVED -->
+		<div id="get-involved" class="container get-involved">
+			<div class="get-involved-unit">
+				<div class="qoute">
+					Do you live or work in London borough neighbouring the City of London?
+				</div>
+				<div class="sub-txt">
+					For more information on how to apply contact Liu at <a
+						href="mailto:liucina@miske.co.uk">liucina@miske.co.uk</a>
+				</div>
+			</div>
+			<!-- fake parallax -->
+			<div class="fake-parallax" onclick="expandGraphics(this)">
+				<div class="fake-parallax-image"></div>
+			</div>
+
+			<div class="get-involved-unit">
+				<div class="qoute">
+					Do you have any ideas how we can bring MISKE to your local community? Alongside Open Forest we will be running
+					a series of events and workshops
+				</div>
+				<div class="sub-txt">
+					to get involved or suggest something amazing for your area let us know here <a
+						href="mailto:info@miske.co.uk">info@miske.co.uk</a>
+				</div>
+			</div>
+			<div class="get-involved-unit">
+				<div class="qoute">
+					We are building a team of volunteers for both the duration of Open Forest and afterwards, to replant all the
+					greenery in the local area.
+				</div>
+				<div class="sub-txt">
+					If you feel passionate about creating beautiful green pockets in our fantastic city and have a few hours spare
+					in September 2020 contact us here <a href="mailto:info@miske.co.uk">info@miske.co.uk</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- CONTACT -->
+		<div id="contact" class="container contact">
+			<div class="qoute">
+				For any inquiries no matter how wacky please contact us
+			</div>
+			<div class="sub-txt">
+				<a href="mailto:info@miske.co.uk">info@miske.co.uk</a>
+			</div>
+		</div>
+	</div>
+	<!-- scroll element -->
+	<div id="footer" class="fake-parallax" onclick="expandGraphics(this)">
+		<div class="fake-parallax-image"></div>
+	</div>
+
+
+	<!-- js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="menu.js"></script>
+	<script src="main.js"></script>
+	<script src="title.js"></script>
+	<script src="sketch.js"></script>
+
+</body>
+
+</html>
