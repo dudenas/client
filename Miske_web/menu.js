@@ -3,7 +3,7 @@ let menuIsHovered = false;
 function scrollMenu(title) {
   // elmnt.scrollIntoView();
   let elmnt = document.getElementById(title);
-  const yOffset = 1;
+  const yOffset = 5;
   const y = elmnt.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
   window.scrollTo({

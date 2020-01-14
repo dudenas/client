@@ -78,7 +78,8 @@ body {
   7. SKETCH
   8. SOCIAL
   9. LOGO
- */
+  10. POPUP
+  */
 /* ———————————————————————————————————— */
 
 /* a. NAVIGATION */
@@ -148,11 +149,6 @@ nav {
 
 /* b. GLOBAL */
 /* ———————————————————————————————————— */
-.txt-box {
-  background: var(--bg-color-white-txtbox);
-  display: inline;
-}
-
 /* photo */
 .photo * {
   width: 30vw;
@@ -236,13 +232,13 @@ nav {
 }
 
 .about .photo * {
-  width: 70vw;
+  width: 100vw;
 }
 
 .about .paragraph {
   padding-top: calc(var(--menu-padd) * 2 + var(--font-size-h6));
   width: 35vw;
-  margin-left: -15vw;
+  margin-left: -45vw;
   padding-right: var(--social-padd);
 
   color: var(--color-black);
@@ -251,6 +247,67 @@ nav {
 .about .qoute {
   width: 55vw;
   color: var(--color-black);
+}
+
+.about .txt-box {
+  background: transparent;
+  transition: 200ms ease-in-out;
+  display: inline;
+}
+
+.about .right {
+  z-index: 1;
+  margin-left: -10vh;
+}
+
+@keyframes slidy {
+  0% {
+    left: 0%;
+  }
+
+  20% {
+    left: 0%;
+  }
+
+  35% {
+    left: -100%;
+  }
+
+  55% {
+    left: -100%;
+  }
+
+  70% {
+    left: -200%;
+  }
+
+  85% {
+    left: -200%;
+  }
+
+  100% {
+    left: -300%;
+  }
+}
+
+div#slider {
+  overflow: hidden;
+}
+
+div#slider figure img {
+  float: left;
+  padding-right: 10vh;
+}
+
+div#slider figure {
+  position: relative;
+  width: 400%;
+  animation: 15s slidy infinite ease-in-out;
+}
+
+div#slider figure img:first-child,
+div#slider figure img:last-child {
+  margin-top: 5%;
 }
 
 /* 2. TEAM */
@@ -546,4 +603,59 @@ nav {
   top: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
+}
+
+/* 10. POPUP */
+/* ———————————————————————————————————— */
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0%;
+  right: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 200ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.popup {
+  left: 25%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 70px auto;
+  padding: 20px;
+  background: var(--color-white);
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: var(--color-black);
+  font: var(--font-wght-serif) var(--font-size-h2) 'Martel', serif;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.popup .close:hover {
+  color: #06D85F;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+  font: var(--font-wght-sans-serif-2) var(--font-size-h6) 'Raleway', sans-serif;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
@@ -27,6 +27,17 @@
 </head>
 
 <body>
+	<!-- POP UP FOR GRAPHICS -->
+	<div id="popup1" class="overlay">
+		<div class="popup">
+			<h2>Work in progress...</h2>
+			<a class="close" onclick="expandGraphics(this)">&times;</a>
+			<div class="content">
+				Generative graphics are still in development
+			</div>
+		</div>
+	</div>
+
 	<!-- NAVIGATION -->
 	<nav class="nav">
 		<ul>
@@ -118,8 +129,13 @@
 		<!-- ABOUT -->
 		<div id="about" class="container about">
 			<div class="left">
-				<div class="photo">
-					<img src="assets/photo_about.jpg" alt="">
+				<div id="slider" class="photo">
+					<figure>
+						<img src="assets/photo_about_1.jpg" alt="">
+						<img src="assets/photo_about_2.jpg" alt="">
+						<img src="assets/photo_about_3.jpg" alt="">
+						<img src="assets/photo_about_1.jpg" alt="">
+					</figure>
 				</div>
 				<div class="qoute">
 					From urban jungle<br> to living forest
