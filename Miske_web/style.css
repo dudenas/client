@@ -250,7 +250,7 @@ nav {
 }
 
 .about .txt-box {
-  background: transparent;
+  background: var(--bg-color-white-txtbox);
   transition: 200ms ease-in-out;
   display: inline;
 }

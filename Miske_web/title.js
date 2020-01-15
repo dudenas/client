@@ -129,6 +129,8 @@ function updateData() {
 }
 
 setTimeout(() => updateData(), 1000);
+// update constantly as the images loads really slow
+setInterval(() => updateData(), 10000);
 
 resize();
 initMovingElements();

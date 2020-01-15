@@ -33,17 +33,3 @@ function socialMedia(elm) {
     window.open('https://twitter.com/MISKE09262495')
   }
 }
-
-// DOCUMETN READY
-$(document).ready(function () {
-  $(".right").mouseenter(function () {
-    $(".about .txt-box").css({
-      'background': 'var(--bg-color-white-txtbox)',
-    });
-    console.log('test')
-  }).mouseleave(function () {
-    $(".about .txt-box").css({
-      'background': 'transparent',
-    });
-  });
-});
