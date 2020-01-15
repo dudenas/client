@@ -33,3 +33,16 @@ function socialMedia(elm) {
     window.open('https://twitter.com/MISKE09262495')
   }
 }
+
+// DOCUMENT READY
+let mobile;
+let mobileWidth = 800;
+let heightPercent
+
+$(document).ready(function () {
+  // define if it is mobile or not
+  if (window.innerWidth > mobileWidth) mobile = false;
+  else {
+    mobile = true
+  }
+});

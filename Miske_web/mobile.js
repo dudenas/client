@@ -21,7 +21,6 @@ function closeMenu() {
   })
 }
 
-
 // modalBurgerClose.addEventListener('click', () => {
 //   modalBurgerOpen.style.display = "block"
 //   modalBurgerClose.style.display = "none"

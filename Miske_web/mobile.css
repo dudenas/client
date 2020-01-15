@@ -21,6 +21,20 @@
 }
 
 @media only screen and (max-width: 800px) {
+  :root {
+    /* font */
+    /* title */
+    --font-size-h1: 124px;
+    /* qoutes */
+    --font-size-h2: 46px;
+    /* names */
+    --font-size-h3: 30px;
+    /* subnames */
+    --font-size-h4: 18px;
+    /* paragraph */
+    --font-size-h5: 16px;
+    /* menu */
+  }
 
   .mobile {
     display: block;
@@ -52,7 +66,6 @@
     height: 60vh;
   }
 
-  /*  */
   .target {
     display: none;
   }
@@ -140,4 +153,35 @@
     fill: var(--color-white);
     opacity: 1;
   }
+
+  /* 1. ABOUT */
+  /* ———————————————————————————————————— */
+  .about {
+    display: flex;
+    /* flex-direction: column; */
+  }
+
+  .about .left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about .photo * {
+    width: 100vw;
+  }
+
+  .about .paragraph {
+    padding-top: calc(var(--menu-padd) * 2 + var(--font-size-h6));
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    color: var(--color-black);
+  }
+
+  .about .qoute {
+    width: 100vw;
+    color: var(--color-black);
+  }
+
 }

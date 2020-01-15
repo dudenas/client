@@ -125,7 +125,14 @@ function updateData() {
   _positions[5].end.percent = _footer + _startEarly
 
   _scrollHeight = _containerHeight
-  console.log('data is updated after the page is loaded')
+
+  if (mobile) {
+    heightPercent = window.innerHeight / _containerHeight
+    for (let i = 0; i < _positions.length; i++) {
+      _positions[i].start.y = heightPercent / 3
+      _positions[i].end.y = heightPercent / 3
+    }
+  }
 }
 
 setTimeout(() => updateData(), 1000);
@@ -189,6 +196,7 @@ function updateMenu() {
     if (_positions[i].start.percent + _startEarly < _scrollPercent && _positions[i].end.percent - _startEarly > _scrollPercent) {
       if (!menuIsHovered) {
         mouseenterFuncManual(links[i])
+        $('#title-mobile').html(links[i].innerHTML)
         break
       }
     }

@@ -27,10 +27,9 @@ function mouseenterFunc() {
   menuIsHovered = true
   if (!this.parentNode.classList.contains("active")) {
     for (let i = 0; i < links.length; i++) {
-      if (links[i].parentNode.classList.contains("active")) {
-        links[i].parentNode.classList.remove("active");
-      }
+      if (links[i].parentNode.classList.contains("active")) {}
       links[i].style.opacity = "0.25";
+      links[i].parentNode.classList.remove("active");
     }
 
     this.parentNode.classList.add("active");

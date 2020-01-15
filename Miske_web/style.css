@@ -51,6 +51,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   background-color: var(--bg-color-green);
 }
 
@@ -251,7 +252,6 @@ nav {
 
 .about .txt-box {
   background: var(--bg-color-white-txtbox);
-  transition: 200ms ease-in-out;
   display: inline;
 }
 
