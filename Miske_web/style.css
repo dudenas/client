@@ -1,6 +1,6 @@
 /* font */
 @import url('https://fonts.googleapis.com/css?family=Raleway:200,300&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Martel:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Martel:300,600&display=swap');
 
 /* custom variables */
 :root {
@@ -157,6 +157,10 @@ nav {
 }
 
 /* text */
+strong {
+  font: 600 var(--font-size-h4) 'Martel', serif;
+}
+
 .qoute {
   font: var(--font-wght-serif) var(--font-size-h2) 'Martel', serif;
   line-height: var(--line-height-qoute);
@@ -305,8 +309,7 @@ div#slider figure {
   animation: 15s slidy infinite ease-in-out;
 }
 
-div#slider figure img:first-child,
-div#slider figure img:last-child {
+div#slider figure img:nth-child(2) {
   margin-top: 5%;
 }
 
@@ -444,7 +447,7 @@ div#slider figure img:last-child {
   align-self: center;
 }
 
-/* 4. DONATIONS */
+/* 4. DONATE */
 /* ———————————————————————————————————— */
 .donations {
   display: flex;

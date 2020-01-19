@@ -26,7 +26,7 @@
     /* title */
     --font-size-h1: 124px;
     /* qoutes */
-    --font-size-h2: 46px;
+    --font-size-h2: 38px;
     /* names */
     --font-size-h3: 30px;
     /* subnames */
@@ -34,6 +34,10 @@
     /* paragraph */
     --font-size-h5: 16px;
     /* menu */
+
+    /* padd */
+    --text-paragraph-padd: 2em;
+    --social-padd: 0;
   }
 
   .mobile {
@@ -154,14 +158,57 @@
     opacity: 1;
   }
 
+  /* b. GLOBAL */
+  /* ———————————————————————————————————— */
+  .photo * {
+    width: 100vw;
+    height: auto;
+  }
+
+  .name {
+    white-space: pre-wrap;
+    line-height: 1.2;
+  }
+
+  .position {
+    font: var(--font-wght-serif) var(--font-size-h4) 'Martel', serif;
+    white-space: pre-wrap;
+    padding-bottom: var(--about-person-padd);
+  }
+
+  .person {
+    width: 100vw;
+  }
+
+  .person>div {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding-left: 5%;
+  }
+
+  .sub-txt {
+    font: 300 var(--font-size-h4) 'Martel', serif;
+    margin-top: -4em;
+    padding-bottom: var(--text-paragraph-padd);
+    margin-left: 5vw;
+  }
+
+  .txt-align-right>* {
+    text-align: left;
+    float: none;
+    position: relative;
+    direction: ltr;
+  }
+
+  .qoute {
+    width: 90vw;
+    padding: var(--text-paragraph-padd) 0;
+  }
+
   /* 1. ABOUT */
   /* ———————————————————————————————————— */
   .about {
-    display: flex;
-    /* flex-direction: column; */
-  }
-
-  .about .left {
     display: flex;
     flex-direction: column;
   }
@@ -172,16 +219,174 @@
 
   .about .paragraph {
     padding-top: calc(var(--menu-padd) * 2 + var(--font-size-h6));
-    width: 100%;
+    width: 90%;
     margin: 0;
     padding: 0;
+    padding-bottom: 5vh;
 
     color: var(--color-black);
+  }
+
+  .about .right {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
   }
 
   .about .qoute {
     width: 100vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
     color: var(--color-black);
   }
 
+  div#slider figure img {
+    float: left;
+    padding: 0;
+  }
+
+  /* 2. TEAM */
+  /* ———————————————————————————————————— */
+
+  /* individual photo */
+  .team {
+    flex-direction: column;
+  }
+
+
+  .team .liu .person,
+  .team .augustinas .person,
+  .team .argiris .person,
+  .team .al .person {
+    margin-top: 2vh;
+  }
+
+  .team .ula .person,
+  .team .ellie .person {
+    margin-bottom: 0;
+    position: relative;
+    float: none;
+  }
+
+  .team .liu,
+  .team .ellie,
+  .team .argiris,
+  .team .al {
+    align-self: baseline;
+    padding-right: var(--social-padd);
+  }
+
+  .team .liu .person {
+    margin-left: 0;
+  }
+
+  .team .ula {
+    align-self: baseline;
+    padding-left: 0;
+    padding-bottom: 5vh;
+  }
+
+  .team .ula .person {
+    margin-left: 0;
+  }
+
+  .team .argiris .person {
+    margin-left: 0;
+  }
+
+  .team .ellie .person {
+    margin-left: 0;
+    padding-top: var(--text-paragraph-padd)
+  }
+
+  .team .ellie .paragraph,
+  .team .ula .paragraph {
+    padding-bottom: 0;
+  }
+
+  .team .ellie .name,
+  .team .ula .name {
+    padding-top: var(--about-person-padd);
+  }
+
+  .team .ellie {
+    padding-bottom: 5vh;
+  }
+
+  .team .augustinas {
+    align-self: baseline;
+  }
+
+  .team .augustinas .person {
+    margin-left: 0;
+  }
+
+  .team .al {
+    padding-right: 0;
+  }
+
+  .team .al .person {
+    margin-left: 0;
+  }
+
+  /* 3. ARTISTS */
+  /* ———————————————————————————————————— */
+  .artists .person {
+    margin-top: 2vh;
+  }
+
+  .artists .person>div>span {
+    display: block;
+  }
+
+  /* individual photo */
+  .artists>:nth-child(even) {
+    padding-right: 0;
+    align-self: center;
+  }
+
+  .artists>:nth-child(odd) {
+    padding-left: 0;
+    align-self: center;
+  }
+
+  .artists>:nth-child(2) .person {
+    margin-left: 0;
+  }
+
+  /* 4. DONATE */
+  /* ———————————————————————————————————— */
+  /* button */
+  .donations .button button {
+    width: 100vw;
+    height: 25vw;
+    background-color: var(--bg-color-green);
+    color: var(--color-white);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    cursor: pointer;
+
+    font: var(--font-wght-sans-serif-2) var(--font-size-h6) 'Raleway', sans-serif;
+
+    transition: .3s ease-in-out;
+  }
+
+  .donations .button button:focus {
+    outline: none;
+  }
+
+  .donations .button button:hover {
+    background-color: var(--bg-color-white);
+    color: var(--color-black);
+    letter-spacing: 0.35em;
+  }
+
+  .donations .fake-parallax {
+    cursor: default;
+  }
 }

@@ -20,11 +20,20 @@ let _donateHeight = (document.getElementById('donations').offsetTop / _container
 let _getInvolvedHeight = (document.getElementById('get-involved').offsetTop / _containerHeight)
 let _contactHeight = (document.getElementById('contact').offsetTop / _containerHeight)
 
+_width = window.innerWidth
+let _aboutTitle = ((document.getElementsByClassName('about-title')[0].offsetWidth) / _width)
+let _aboutTeam = ((document.getElementsByClassName('about-team')[0].offsetWidth) / _width)
+let _aboutArtists = ((document.getElementsByClassName('about-artists')[0].offsetWidth) / _width) + 0.2
+let _aboutDonate = ((document.getElementsByClassName('about-donate')[0].offsetWidth) / _width)
+let _aboutGetInvolved = ((document.getElementsByClassName('about-get-involved')[0].offsetWidth) / _width) + 0.2
+let _aboutContact = ((document.getElementsByClassName('about-contact')[0].offsetWidth) / _width)
+
+
 let _positions = [{
     name: 'about-title',
     start: {
       percent: _aboutHeight,
-      x: -1,
+      x: -_aboutTitle,
       y: 0
     },
     end: {
@@ -37,7 +46,7 @@ let _positions = [{
     name: 'about-team',
     start: {
       percent: _teamHeight,
-      x: -1,
+      x: -_aboutTeam,
       y: 0
     },
     end: {
@@ -50,7 +59,7 @@ let _positions = [{
     name: 'about-artists',
     start: {
       percent: _artistsHeight,
-      x: -1,
+      x: -_aboutArtists,
       y: 0
     },
     end: {
@@ -63,7 +72,7 @@ let _positions = [{
     name: 'about-donate',
     start: {
       percent: _donateHeight,
-      x: -1,
+      x: -_aboutDonate,
       y: 0
     },
     end: {
@@ -76,7 +85,7 @@ let _positions = [{
     name: 'about-get-involved',
     start: {
       percent: _getInvolvedHeight,
-      x: -1,
+      x: -_aboutGetInvolved,
       y: 0
     },
     end: {
@@ -89,7 +98,7 @@ let _positions = [{
     name: 'about-contact',
     start: {
       percent: _contactHeight,
-      x: -1,
+      x: -_aboutContact,
       y: 0
     },
     end: {
