@@ -2,14 +2,16 @@ let diff = 200
 let zIndex = 0
 let rows = 8
 let randomMove = 250
+let _quality = 0
 
 class Tree {
   constructor(treeIndex) {
-    this.donated = random(1) > 0.8
+    this.donated = random(1) > 0.7
     this.branches = []
     // this.pos = createVector(0, 0, 0)
     this.treeIndex = treeIndex
     this.startIndex = data[this.treeIndex][0].index
+    this.currentIndex = this.startIndex + 2
     const totalWidth = floor((Object.keys(data).length - 1) / rows)
     const x = map(zIndex, 0, totalWidth, 0, diff * 2);
     const z = map(this.treeIndex % rows, 0, rows - 1, -diff, diff);
@@ -27,6 +29,16 @@ class Tree {
     }
   }
 
+  // reset 
+  reset() {
+    this.branches.forEach(b => {
+      b.done = false
+      b.percent = 0
+      b.animPos = b.parent != null ? b.parent.pos.copy() : null
+      this.currentIndex = this.startIndex + 2
+    })
+  }
+
   // SHOW
   show() {
     push()
@@ -41,7 +53,15 @@ class Tree {
           b.showDot(false)
         }
       } else if (this.donated) {
-        b.show()
+        if (index - this.startIndex < _quality) {
+          if (index < this.currentIndex) {
+            b.show()
+            if (b.done) {
+              // console.log(this.currentIndex)
+              this.currentIndex++
+            }
+          }
+        }
       }
     })
     pop()

@@ -2,10 +2,10 @@ const totalLeaves = 250
 const min_dist = 10
 // DEFINES THE TREE
 const max_dist = 100
-const totalBranches = 800
+const totalBranches = 400
 const len = 10
 const radius = 125
-const totalTrees = 100
+const totalTrees = 20
 
 class Tree {
   constructor() {
