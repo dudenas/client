@@ -81,6 +81,3 @@ function resizeFunc() {
     target.style.left = `${left}px`;
   }
 }
-
-
-/* https://webdesign.tutsplus.com/tutorials/how-to-build-a-shifting-underline-hover-effect-with-css-and-javascript--cms-28510 */

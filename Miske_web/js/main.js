@@ -2,25 +2,19 @@ let graphics_on = false
 
 function expandGraphics(elm) {
   graphics_on = !graphics_on
-  let grfc = document.getElementById("before");
-  let popup = document.getElementById("popup1");
+  let grfc = document.getElementById("scaleable-wrapper");
   if (graphics_on) {
-    $(popup).css({
-      'opacity': '1',
-      'visibility': 'visible'
-    })
-    //   grfc.scrollIntoView();
-    //   $(grfc).css({
-    //     'height': '100vh',
-    //   }); //The specific CSS changes after the first one, are, of course, just examples.
+    _showCanvas = true
+    grfc.scrollIntoView();
+    $(grfc).css({
+      'height': '100vh',
+    });
   } else {
-    $(popup).css({
-      'opacity': '0',
-      'visibility': 'hidden'
-    })
-    // $(grfc).css({
-    //   'height': '0vh',
-    // });
+    _showCanvas = false
+    _resetCanvas = true
+    $(grfc).css({
+      'height': '0vh',
+    });
   }
 }
 

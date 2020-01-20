@@ -13,21 +13,10 @@
 	<link rel="stylesheet" href="mobile.css">
 
 	<!-- js -->
-	<script src="libraries/p5.js"></script>
+	<script src="grfc/libraries/p5.js"></script>
 </head>
 
 <body>
-	<!-- POP UP FOR GRAPHICS -->
-	<div id="popup1" class="overlay">
-		<div class="popup">
-			<h2>Work in progress...</h2>
-			<a class="close" onclick="expandGraphics(this)">&times;</a>
-			<div class="content">
-				Generative graphics are still in development
-			</div>
-		</div>
-	</div>
-
 	<!-- NAVIGATION -->
 	<div id="title-mobile" class="mobile"></div>
 	<div id="hamburger" class="mobile">
@@ -154,8 +143,8 @@
 		</div>
 	</div>
 	<!-- SKETCH -->
-	<div id="before" onclick="expandGraphics(this)">
-		<div id="sketch"></div>
+	<div id="scaleable-wrapper" onclick="expandGraphics(this)">
+		<div id="grfc"></div>
 	</div>
 	<!-- logo -->
 
@@ -437,11 +426,16 @@
 
 	<!-- js -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="menu.js"></script>
-	<script src="main.js"></script>
-	<script src="title.js"></script>
-	<script src="sketch.js"></script>
-	<script src="mobile.js"></script>
+	<!-- main -->
+	<script src="js/menu.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/title.js"></script>
+	<script src="js/mobile.js"></script>
+	<!-- sketch -->
+	<script src="grfc/branch.js"></script>
+	<script src="grfc/tree.js"></script>
+	<script src="grfc/sketch.js"></script>
+	<script src="grfc/resizeGrfc.js"></script>
 
 </body>
 
