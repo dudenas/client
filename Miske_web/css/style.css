@@ -269,28 +269,44 @@ strong {
     left: 0%;
   }
 
-  20% {
+  10% {
     left: 0%;
   }
 
-  35% {
+  20% {
     left: -100%;
   }
 
-  55% {
+  30% {
     left: -100%;
+  }
+
+  40% {
+    left: -200%;
+  }
+
+  50% {
+    left: -300%;
+  }
+
+  60% {
+    left: -300%;
   }
 
   70% {
-    left: -200%;
+    left: -400%;
   }
 
-  85% {
-    left: -200%;
+  80% {
+    left: -400%;
+  }
+
+  90% {
+    left: -500%;
   }
 
   100% {
-    left: -300%;
+    left: -500%;
   }
 }
 
@@ -305,13 +321,13 @@ div#slider figure img {
 
 div#slider figure {
   position: relative;
-  width: 400%;
-  animation: 15s slidy infinite ease-in-out;
+  width: 600%;
+  animation: 20s slidy infinite ease-in-out;
 }
 
-div#slider figure img:nth-child(2) {
+/* div#slider figure img:nth-child(2) {
   margin-top: 5%;
-}
+} */
 
 /* 2. TEAM */
 /* ———————————————————————————————————— */
@@ -547,7 +563,7 @@ div#slider figure img:nth-child(2) {
   top: 50%;
   transform: translate(-50%, -50%);
   transform-origin: center center;
-  cursor: url(./assets/cursor_custom.png), auto;
+  cursor: url(../assets/cursor_custom.png), auto;
 }
 
 .fake-parallax {
@@ -559,7 +575,7 @@ div#slider figure img:nth-child(2) {
   z-index: 1;
   overflow: hidden;
   transition: 0.6s;
-  cursor: url(./assets/cursor_custom.png), auto;
+  cursor: url(../assets/cursor_custom.png), auto;
 }
 
 .fake-parallax-image {
@@ -569,7 +585,7 @@ div#slider figure img:nth-child(2) {
   left: 0;
   position: absolute;
   z-index: -1;
-  background-image: url(./assets/cover_6.png);
+  background-image: url(../assets/cover_6.png);
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;

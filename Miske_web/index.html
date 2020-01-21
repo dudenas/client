@@ -13,7 +13,6 @@
 	<link rel="stylesheet" href="css/mobile.css">
 
 	<!-- js -->
-	<script src="grfc/libraries/p5.js"></script>
 </head>
 
 <body>
@@ -96,8 +95,8 @@
 			</div>
 		</div>
 	</nav>
-
 	<span class="target"></span>
+
 	<!-- TITLE -->
 	<div class="title">
 		<div class="moving-title about-title">ABOUT</div>
@@ -168,10 +167,12 @@
 			<div class="left">
 				<div id="slider" class="photo">
 					<figure>
-						<img src="assets/photo_about_3.jpg" alt="">
-						<img src="assets/photo_about_1.jpg" alt="">
-						<img src="assets/photo_about_2.jpg" alt="">
-						<img src="assets/photo_about_3.jpg" alt="">
+						<img class="lazy" src="/" data-src="assets/photo_about_3.jpg" alt="">
+						<img class="lazy" src="/" data-src="assets/photo_about_1a.jpg" alt="">
+						<img class="lazy" src="/" data-src="assets/photo_about_1b.jpg" alt="">
+						<img class="lazy" src="/" data-src="assets/photo_about_1c.jpg" alt="">
+						<img class="lazy" src="/" data-src="assets/photo_about_2.jpg" alt="">
+						<img class="lazy" src="/" data-src="assets/photo_about_3.jpg" alt="">
 					</figure>
 				</div>
 				<div class="qoute">
@@ -227,7 +228,7 @@
 		<div id="team" class="container team">
 			<div class="liu">
 				<div class="photo">
-					<img src="assets/photo_liu.jpg" alt="">
+					<img class="lazy" src="/" data-src="assets/photo_liu.jpg" alt="ula photo">
 				</div>
 				<div class="person txt-align-right">
 					<div class="name">Liu Mackialo</div>
@@ -247,12 +248,12 @@
 					<div class="position">Landscape designer</div>
 				</div>
 				<div class="photo">
-					<img src="assets/photo_ula.jpg" alt="ula photo">
+					<img class="lazy" src="/" data-src="assets/photo_ula.jpg" alt="ula photo">
 				</div>
 			</div>
 			<div class="argiris">
 				<div class="photo">
-					<img src="assets/photo_algiris.jpg" alt="augustinas photo">
+					<img class="lazy" src="/" data-src="assets/photo_algiris.jpg" alt="augustinas photo">
 				</div>
 				<div class="person txt-align-right">
 					<div class="name">Argiris Sarris</div>
@@ -276,12 +277,12 @@
 					<div class="position">Communication manager</div>
 				</div>
 				<div class="photo">
-					<img src="assets/photo_ellie.jpg" alt="Ellie photo">
+					<img class="lazy" src="/" data-src="assets/photo_ellie.jpg" alt="Ellie photo">
 				</div>
 			</div>
 			<div class="augustinas">
 				<div class="photo">
-					<img src="assets/photo_augustinas.jpg" alt="augustinas photo">
+					<img class="lazy" src="/" data-src="assets/photo_augustinas.jpg" alt="augustinas photo">
 				</div>
 				<div class="person">
 					<div class="name">Augustinas Minkauskas</div>
@@ -294,7 +295,7 @@
 			</div>
 			<div class="al">
 				<div class="photo">
-					<img src="assets/photo_al.jpg" alt="augustinas photo">
+					<img class="lazy" src="/" data-src="assets/photo_al.jpg" alt="augustinas photo">
 				</div>
 				<div class="person txt-align-right">
 					<div class="name">Al Shaibani</div>
@@ -313,7 +314,7 @@
 			</div>
 			<div>
 				<div class="photo">
-					<img src="assets/photo_holland.jpg" alt="photo-rob-holland">
+					<img class="lazy" src="/" data-src="assets/photo_holland.jpg" alt="photo-rob-holland">
 				</div>
 				<div class="person txt-align-right">
 					<div class="name"><span>Rob Holland</span></div>
@@ -329,24 +330,6 @@
 			<div class="fake-parallax" onclick="expandGraphics(this)">
 				<div class="fake-parallax-image"></div>
 			</div>
-			<!-- another artist -->
-			<!-- fake div -->
-			<!-- <div></div>
-			<div>
-				<div class="photo">
-					<img src="assets/photo_sabaliauskas.jpg" alt="photo-eugenijus-sabaliauskas">
-				</div>
-				<div class="person">
-					<div class="name"><span>Eugenijus Sabaliauskas</span></div>
-					<div class="position"><span>Light artist</span></div>
-					<div class="paragraph">
-						<span>Lithuanian based Eugenijus Sabaliauskas will be lighting Open Forest to reflect the passing of the sun
-							outside. The forest will go through dawn and dusk, creating a magical landscape unique to every hour. The
-							inspiration for the lighting has come from the natural light in nature, making the forest as true to life
-							as possible</span>
-					</div>
-				</div>
-			</div> -->
 			<!-- qoute -->
 			<div class="get-involved-unit">
 				<div class="qoute">
@@ -431,16 +414,20 @@
 
 	<!-- js -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="libraries/yall.min.js"></script>
 	<!-- main -->
-	<script src="js/menu.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/menu.js"></script>
 	<script src="js/title.js"></script>
 	<script src="js/mobile.js"></script>
+
 	<!-- sketch -->
+	<script src="grfc/resizeGrfc.js"></script>
+	<script src="grfc/libraries/p5.js"></script>
 	<script src="grfc/branch.js"></script>
 	<script src="grfc/tree.js"></script>
 	<script src="grfc/sketch.js"></script>
-	<script src="grfc/resizeGrfc.js"></script>
+
 
 </body>
 

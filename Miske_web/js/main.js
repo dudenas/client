@@ -1,3 +1,6 @@
+// lazy loading
+document.addEventListener("DOMContentLoaded", yall);
+
 let graphics_on = false
 
 function expandGraphics(elm) {
